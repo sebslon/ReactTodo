@@ -1,23 +1,23 @@
-import {Task, TodoActions, TodoActionTypes} from '../@types/todoTasks.types';
+import {TodoTask, TodoActions, TodoActionTypes} from '../@types/todoTasks.types';
 
-export const addTask = (task: Task): TodoActionTypes => ({
+export const addTodoTask = (task: TodoTask): TodoActionTypes => ({
   type: TodoActions.ADD_TASK,
   payload: task,
 });
 
-export const removeTask = (id: number): TodoActionTypes => ({
+export const removeTodoTask = (id: number): TodoActionTypes => ({
   type: TodoActions.REMOVE_TASK,
   payload: {
     id,
   },
 });
 
-export const editTask = (task: Task): TodoActionTypes => ({
+export const editTodoTask = (task: TodoTask): TodoActionTypes => ({
   type: TodoActions.EDIT_TASK,
   payload: task,
 });
 
-export const importTasks = (tasks: Task[]): TodoActionTypes => ({
+export const importTodoTasks = (tasks: TodoTask[]): TodoActionTypes => ({
   type: TodoActions.IMPORT_TASKS,
   payload: tasks,
 });

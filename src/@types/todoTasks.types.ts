@@ -1,11 +1,11 @@
 export enum TodoActions {
-  ADD_TASK = "ADD_TASK",
-  EDIT_TASK = "EDIT_TASK",
-  REMOVE_TASK = "REMOVE_TASK",
-  IMPORT_TASKS = "IMPORT_TASKS",
+  ADD_TASK = "ADD_TODO_TASK",
+  EDIT_TASK = "EDIT_TODO_TASK",
+  REMOVE_TASK = "REMOVE_TODO_TASK",
+  IMPORT_TASKS = "IMPORT_TODO_TASKS",
 }
 
-export interface Task {
+export interface TodoTask {
   id: number;
   title: string;
   description: string;
@@ -15,7 +15,7 @@ export interface Task {
 
 export interface AddTask {
   type: TodoActions.ADD_TASK;
-  payload: Task;
+  payload: TodoTask;
 }
 
 export interface RemoveTask {
@@ -27,12 +27,12 @@ export interface RemoveTask {
 
 export interface EditTask {
   type: TodoActions.EDIT_TASK;
-  payload: Task;
+  payload: TodoTask;
 }
 
 export interface ImportTasks {
   type: TodoActions.IMPORT_TASKS;
-  payload: Task[];
+  payload: TodoTask[];
 }
 
 export type TodoActionTypes = AddTask | RemoveTask | EditTask | ImportTasks;
