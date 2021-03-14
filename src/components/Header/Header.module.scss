@@ -1,10 +1,10 @@
 //$primaryColor: #03A9F4;
 //$secondaryColor: #bbdefb;
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-$primaryColor:#ffae00;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+$primaryColor: #ffae00;
 $secondaryColor: #992000;
 
-.header{
+.header {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
@@ -42,14 +42,14 @@ $secondaryColor: #992000;
 
     &:hover {
       // border-color: $secondaryColor;
-      box-shadow: inset 0px 0px 8px #fff; 
+      box-shadow: inset 0px 0px 8px #fff;
     }
 
     &:active {
       box-shadow: inset 0px 0px 10px 3px #fff;
     }
 
-    transition: box-shadow 0.5s ease;
+    transition: box-shadow 0.2s ease;
   }
 
   &__link {

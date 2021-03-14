@@ -1,0 +1,47 @@
+@mixin truncate-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 30px);
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 16px;
+  background-color: #f5f5f5;
+  box-shadow: -3px 3px 8px 0 rgba(50, 50, 50, 0.2);
+
+  &__state-panel {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  &__title {
+    flex-grow: 1;
+    font-size: 1em;
+    font-weight: bold;
+
+    @include truncate-text;
+  }
+
+  &__description {
+    flex-grow: 1;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.8em;
+  }
+
+  &__creation-date,
+  &__deadline {
+    font-size: 0.7em;
+  }
+}
+
