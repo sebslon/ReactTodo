@@ -11,7 +11,7 @@ export interface HeaderProps {
 const Header: React.FC<HeaderProps> = () => {
   return (
     <nav className={style()}>
-      <h1 className={style('title')}>Get the things done!</h1>
+      <h1 className={style('title')}>Get your things DONE !</h1>
       <ul className={style('list')}>
         <li className={style('element')}>
           <Link className={style('link')} to='/todo'>Your tasks</Link>

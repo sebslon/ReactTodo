@@ -1,0 +1,31 @@
+.add-task {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 30px);
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  box-shadow: -3px 3px 8px 0 rgba(50,50,50,0.1);
+
+  &__form {
+    width: 100%;
+  }
+
+  &__form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  &__form-field {
+    outline: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  &__text-field {
+    height: 300px;
+    outline: none;
+  }
+}
