@@ -1,6 +1,6 @@
 import { DoneTask, DoneActionTypes, DoneActions } from '../@types/doneTasks.types';
 
-export const taskReducer = (state = [] as DoneTask[], action: DoneActionTypes): DoneTask[] => {
+export const doneReducer = (state = [] as DoneTask[], action: DoneActionTypes): DoneTask[] => {
   switch (action.type) {
     case DoneActions.ADD_TASK:
       return [...state, action.payload];

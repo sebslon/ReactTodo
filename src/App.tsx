@@ -4,6 +4,8 @@ import Header from './components/Header/Header';
 import Content from './components/Content/Content';
 
 import { default as bemCssModules } from 'bem-css-modules';
+import { Provider } from 'react-redux';
+import { store } from './stores/store';
 
 bemCssModules.setSettings({
   modifierDelimiter: '--',
@@ -12,12 +14,14 @@ bemCssModules.setSettings({
 
 function App() {
   return (
-    <div className="App">
-      <HashRouter>
-        <Header />
-        <Content />
-      </HashRouter>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <HashRouter>
+          <Header />
+          <Content />
+        </HashRouter>
+      </div>
+    </Provider>
   );
 }
 
