@@ -1,4 +1,4 @@
-import { DoneTask, DoneActionTypes, DoneActions } from '../@types/doneTasks.types';
+import { DoneTask, DoneActionTypes, DoneActions } from '../types/doneTasks.types';
 
 export const doneReducer = (state = [] as DoneTask[], action: DoneActionTypes): DoneTask[] => {
   switch (action.type) {

@@ -2,7 +2,7 @@ import { default as bemCssModules } from 'bem-css-modules';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
-import { TodoTask } from '../../@types/todoTasks.types';
+import { TodoTask } from '../../types/todoTasks.types';
 import { addTodoTask, editTodoTask } from '../../actions/todoActions';
 import { default as AddTaskStyles } from './AddTask.module.scss';
 

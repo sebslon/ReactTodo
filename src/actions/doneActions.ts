@@ -1,4 +1,4 @@
-import {DoneTask, DoneActions, DoneActionTypes} from '../@types/doneTasks.types';
+import {DoneTask, DoneActions, DoneActionTypes} from '../types/doneTasks.types';
 
 export const addDoneTask = (task: DoneTask): DoneActionTypes => ({
   type: DoneActions.ADD_TASK,
