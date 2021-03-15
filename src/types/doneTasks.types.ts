@@ -8,7 +8,7 @@ export interface DoneTask {
   id: number;
   title: string;
   description: string;
-  creationDate: number;
+  endDate: number;
   deadline?: number;
 }
 

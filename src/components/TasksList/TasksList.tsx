@@ -12,7 +12,7 @@ const style = bemCssModules(TasksListStyles);
 type Task = TodoTask | DoneTask;
 
 const TasksList: React.FC = () => {
-  const id = useParams();
+  const { id } = useParams<any>();
   const tasks = useSelector((state: RootState) => id === 'done' ? state.done : state.todo)
 
   return (
