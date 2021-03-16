@@ -10,6 +10,7 @@ const style = bemCssModules(AddTaskStyles);
 
 const EDIT_LABEL = 'Edit task';
 const ADD_LABEL = 'Add task';
+const actualDate = new Date().toISOString().slice(0, 10);
 
 const AddTask: React.FC = () => {
   const dispatch = useDispatch();
@@ -21,14 +22,16 @@ const AddTask: React.FC = () => {
   const [isDeadlineActive, setDeadlineActive] = useState<boolean>(false);
   const [deadline, setDeadline] = useState<string>(editState?.deadline
     ? new Date(editState.deadline).toISOString().slice(0, 10)
-    : new Date().toISOString().slice(0, 10)
+    : actualDate
   );
 
   const handleOnChangeText = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     e.target.id === 'title-task' ? setTitle(e.target.value) : setDescription(e.target.value);
   }
   const handleChangeDeadline = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setDeadline(e.target.value);
+    if (e.target.value) {
+      setDeadline(e.target.value);
+    }
   }
   const handleOnSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -39,7 +42,7 @@ const AddTask: React.FC = () => {
     const newTask: TodoTask = {
       id: editState?.id ?? Date.now(),
       title,
-      creationDate: editState?.creationDate ?? Date.now(),
+      creationDate: editState?.id ?? Date.now(),
       description,
       deadline: isDeadlineActive ? new Date(deadline).getTime() : undefined,
     };
@@ -72,7 +75,7 @@ const AddTask: React.FC = () => {
         <div className={style('form-row')}>
           <label htmlFor="deadline-task">Deadline</label>
           <input onClick={toggleDeadline} id="deadline-task" type="checkbox" value={isDeadlineActive.toString()} />
-          {isDeadlineActive && <input onChange={handleChangeDeadline} type="date" value={deadline} />}
+          {isDeadlineActive && <input onChange={handleChangeDeadline} type="date" value={deadline} min={actualDate} />}
         </div>
         <button onClick={handleOnSubmit} type="submit">
           {buttonLabel}
