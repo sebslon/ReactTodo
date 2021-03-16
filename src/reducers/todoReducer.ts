@@ -10,7 +10,7 @@ export const todoReducer = (state = [] as TodoTask[], action: TodoActionTypes): 
     }
 
     case TodoActions.EDIT_TASK: {
-      return state.map(task => task.id === action.payload.id ? task : action.payload)
+      return state.map(task => task.id === action.payload.id ? action.payload : task)
     }
 
     case TodoActions.IMPORT_TASKS: {
