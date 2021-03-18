@@ -2,9 +2,11 @@ import { default as bemCssModules } from 'bem-css-modules';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
+
+import { default as AddTaskStyles } from './AddTask.module.scss';
 import { TodoTask } from '../../types/todoTasks.types';
 import { addTodoTask, editTodoTask } from '../../actions/todoActions';
-import { default as AddTaskStyles } from './AddTask.module.scss';
+import { useDatabase } from '../../hooks/useDatabase';
 
 const style = bemCssModules(AddTaskStyles);
 
@@ -13,6 +15,7 @@ const ADD_LABEL = 'Add task';
 const actualDate = new Date().toISOString().slice(0, 10);
 
 const AddTask: React.FC = () => {
+  const database = useDatabase();
   const dispatch = useDispatch();
   const editState = useLocation().state as Partial<TodoTask>
   const history = useHistory();
@@ -48,8 +51,10 @@ const AddTask: React.FC = () => {
     };
 
     if (editState?.id) {
+      database.editObject('todo', newTask);
       dispatch(editTodoTask(newTask));
     } else {
+      database.createObject('todo', newTask);
       dispatch(addTodoTask(newTask));
     }
 

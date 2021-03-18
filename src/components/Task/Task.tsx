@@ -1,3 +1,8 @@
+import { useHistory, useParams } from 'react-router';
+import { useEffect, useState } from 'react';
+import { useDatabase } from '../../hooks/useDatabase';
+import { useDispatch } from 'react-redux';
+
 import { default as bemCssModules } from 'bem-css-modules';
 import IconButton from '../IconButton/IconButton';
 import { default as TaskStyles } from './Task.module.scss';
@@ -5,38 +10,16 @@ import { default as TaskStyles } from './Task.module.scss';
 import deleteTaskIcon from '../../images/clear-24px.svg';
 import doneTaskIcon from '../../images/done-24px.svg';
 import editTaskIcon from '../../images/create-24px.svg';
-import { useHistory, useParams } from 'react-router';
 import { DoneTask } from '../../types/doneTasks.types';
 import { TodoTask } from '../../types/todoTasks.types';
-import { useDispatch } from 'react-redux';
 import { addDoneTask, removeDoneTask } from '../../actions/doneActions';
 import { removeTodoTask } from '../../actions/todoActions';
-import { Months } from '../../types/utils.types'
-import { useEffect, useState } from 'react';
+import { getTimeInformation, getLeftTime} from '../../helpers/timeFunctions'
 
 const style = bemCssModules(TaskStyles);
 
-function getTimeInformation(unixTime: number, stringPrefix: string): string {
-  const date = new Date(unixTime);
-  const day = date.getDate();
-  const month = Months[date.getMonth()];
-  const year = date.getUTCFullYear();
-  const hour = date.getUTCHours() > 9 ? date.getUTCHours() : `0${date.getUTCHours()}`;
-  const minutes = date.getMinutes() > 9 ? date.getMinutes() : `0${date.getMinutes()}`
-
-  return `${stringPrefix} ${day} ${month} ${year} at : ${hour}:${minutes}`;
-}
-
-function getLeftTime(endTime: number): string {
-  const leftTime = endTime - Date.now();
-  const hours = Math.floor(leftTime / (1000 * 60 * 60));
-  const minutes = Math.floor((leftTime % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((leftTime % (1000 * 60)) / 1000);
-  
-  return `Time left: ${hours > 9 ? hours : `0${hours}`}:${minutes > 0 ? minutes : `0${minutes}`}:${seconds > 0 ? seconds : 0+seconds}`;
-}
-
 const Task: React.FC<TodoTask | DoneTask> = (props) => {
+  const database = useDatabase();
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams<any>();
@@ -62,14 +45,18 @@ const Task: React.FC<TodoTask | DoneTask> = (props) => {
     };
 
     dispatch(addDoneTask(changedTask));
+    database.createObject('done', changedTask);
     dispatch(removeTodoTask(props.id));
+    database.deleteObject('todo', props.id);
   };
 
   const deleteTask = (): void => {
     if (isTodoPath) {
       dispatch(removeTodoTask(props.id));
+      database.deleteObject('todo', props.id);
     } else {
       dispatch(removeDoneTask(props.id));
+      database.deleteObject('done', props.id);
     }
   };
 

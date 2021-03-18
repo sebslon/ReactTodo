@@ -26,6 +26,8 @@
 
   &__text-field {
     height: 300px;
+    width: 100%;
+    resize: none;
     outline: none;
   }
 }
