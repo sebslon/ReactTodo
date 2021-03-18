@@ -7,7 +7,6 @@ import AddTask from '../AddTask/AddTask';
 import TasksList from '../TasksList/TasksList';
 import { importTodoTasks } from '../../actions/todoActions';
 import { importDoneTasks } from '../../actions/doneActions';
-import { DatabaseManagerEventName } from '../../helpers/DatabaseManager';
 import { TodoActionTypes, TodoTask } from '../../types/todoTasks.types';
 import { DoneActionTypes, DoneTask } from '../../types/doneTasks.types';
 
@@ -22,7 +21,7 @@ const Content: React.FC = () => {
   }
 
   useEffect(() => {
-    window.addEventListener(DatabaseManagerEventName, () => databaseLoader());
+    window.addEventListener('load', () => databaseLoader());
   }, []);
 
   return (

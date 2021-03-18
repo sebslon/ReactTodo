@@ -78,9 +78,11 @@ const AddTask: React.FC = () => {
           <textarea id="description-task" className={style('text-field')} onChange={handleOnChangeText} value={description} />
         </div>
         <div className={style('form-row')}>
-          <label htmlFor="deadline-task">Deadline</label>
-          <input onClick={toggleDeadline} id="deadline-task" type="checkbox" value={isDeadlineActive.toString()} />
-          {isDeadlineActive && <input onChange={handleChangeDeadline} type="date" value={deadline} min={actualDate} />}
+          <label>
+            <input onClick={toggleDeadline} id="deadline-task" type="checkbox" value={isDeadlineActive.toString()} />
+            {isDeadlineActive && <input onChange={handleChangeDeadline} type="date" value={deadline} min={actualDate} />}
+            {!isDeadlineActive && ' Deadline'}
+            </label>
         </div>
         <button onClick={handleOnSubmit} type="submit">
           {buttonLabel}
