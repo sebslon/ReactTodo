@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.3a840ccc.chunk.css",
-    "main.js": "/static/js/main.c30e016f.chunk.js",
-    "main.js.map": "/static/js/main.c30e016f.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.0dccc550.js",
-    "runtime-main.js.map": "/static/js/runtime-main.0dccc550.js.map",
-    "static/js/2.4ff7ecaf.chunk.js": "/static/js/2.4ff7ecaf.chunk.js",
-    "static/js/2.4ff7ecaf.chunk.js.map": "/static/js/2.4ff7ecaf.chunk.js.map",
-    "static/js/3.a1641d89.chunk.js": "/static/js/3.a1641d89.chunk.js",
-    "static/js/3.a1641d89.chunk.js.map": "/static/js/3.a1641d89.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.3a840ccc.chunk.css.map": "/static/css/main.3a840ccc.chunk.css.map",
-    "static/js/2.4ff7ecaf.chunk.js.LICENSE.txt": "/static/js/2.4ff7ecaf.chunk.js.LICENSE.txt",
-    "static/media/clear-24px.53c9f4b6.svg": "/static/media/clear-24px.53c9f4b6.svg",
-    "static/media/create-24px.249fb4c7.svg": "/static/media/create-24px.249fb4c7.svg",
-    "static/media/done-24px.7a2471bd.svg": "/static/media/done-24px.7a2471bd.svg"
+    "main.css": "/ReactTodo/static/css/main.347a88cc.chunk.css",
+    "main.js": "/ReactTodo/static/js/main.c98589b8.chunk.js",
+    "main.js.map": "/ReactTodo/static/js/main.c98589b8.chunk.js.map",
+    "runtime-main.js": "/ReactTodo/static/js/runtime-main.a7d46830.js",
+    "runtime-main.js.map": "/ReactTodo/static/js/runtime-main.a7d46830.js.map",
+    "static/js/2.b5c439b8.chunk.js": "/ReactTodo/static/js/2.b5c439b8.chunk.js",
+    "static/js/2.b5c439b8.chunk.js.map": "/ReactTodo/static/js/2.b5c439b8.chunk.js.map",
+    "static/js/3.067277cb.chunk.js": "/ReactTodo/static/js/3.067277cb.chunk.js",
+    "static/js/3.067277cb.chunk.js.map": "/ReactTodo/static/js/3.067277cb.chunk.js.map",
+    "index.html": "/ReactTodo/index.html",
+    "static/css/main.347a88cc.chunk.css.map": "/ReactTodo/static/css/main.347a88cc.chunk.css.map",
+    "static/js/2.b5c439b8.chunk.js.LICENSE.txt": "/ReactTodo/static/js/2.b5c439b8.chunk.js.LICENSE.txt",
+    "static/media/clear-24px.53c9f4b6.svg": "/ReactTodo/static/media/clear-24px.53c9f4b6.svg",
+    "static/media/create-24px.249fb4c7.svg": "/ReactTodo/static/media/create-24px.249fb4c7.svg",
+    "static/media/done-24px.7a2471bd.svg": "/ReactTodo/static/media/done-24px.7a2471bd.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0dccc550.js",
-    "static/js/2.4ff7ecaf.chunk.js",
-    "static/css/main.3a840ccc.chunk.css",
-    "static/js/main.c30e016f.chunk.js"
+    "static/js/runtime-main.a7d46830.js",
+    "static/js/2.b5c439b8.chunk.js",
+    "static/css/main.347a88cc.chunk.css",
+    "static/js/main.c98589b8.chunk.js"
   ]
 }
