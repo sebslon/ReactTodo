@@ -5,12 +5,12 @@
   margin: 20px auto 0;
   row-gap: 20px;
 
-  @media (min-width: 765px) {
+  @media screen and (min-width: 765px) {
     grid-template-columns: 1fr 1fr;
     column-gap: 5px;
   }
 
-  @media (min-width: 1024px) {
+  @media screen and (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
