@@ -6,8 +6,10 @@
 
 .task {
   display: flex;
+  font-size: 1rem;
   flex-direction: column;
-  width: calc(100% - 30px);
+  width: 70%;
+  // width: 100%;
   max-width: 360px;
   margin: 0 auto;
   padding: 10px;
@@ -42,6 +44,12 @@
   &__creation-date,
   &__deadline {
     font-size: 0.7em;
+  }
+
+  @media (max-width: 780px) {
+    .task {
+      width: 200px;
+    }
   }
 }
 

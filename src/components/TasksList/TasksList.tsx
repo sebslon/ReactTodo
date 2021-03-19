@@ -9,7 +9,7 @@ import { default as TasksListStyles } from './TasksList.module.scss';
 
 const style = bemCssModules(TasksListStyles);
 
-type Task = TodoTask | DoneTask;
+type TaskType = TodoTask | DoneTask;
 
 const TasksList: React.FC = () => {
   const { id } = useParams<any>();
@@ -17,7 +17,7 @@ const TasksList: React.FC = () => {
 
   return (
     <div className={style()}>
-      {(tasks as Task[]).map(task => (
+      {(tasks as TaskType[]).map(task => (
         <Task key={task.id} {...task} />
       ))}
     </div>

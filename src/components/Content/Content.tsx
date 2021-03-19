@@ -14,7 +14,6 @@ import { DoneActionTypes, DoneTask } from '../../types/doneTasks.types';
 const Content: React.FC = () => {
   const database = useDatabase();
   const dispatch = useDispatch();
-
   const databaseLoader = (): void => {
     database.getAllObjects<(result: TodoTask[]) => TodoActionTypes>('todo', tasks => dispatch(importTodoTasks(tasks)))
     database.getAllObjects<(result: DoneTask[]) => DoneActionTypes>('done', tasks => dispatch(importDoneTasks(tasks)))
@@ -22,7 +21,7 @@ const Content: React.FC = () => {
 
   useEffect(() => {
     window.addEventListener('load', () => databaseLoader());
-  }, []);
+  });
 
   return (
     <Switch>

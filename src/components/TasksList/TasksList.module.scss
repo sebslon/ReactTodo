@@ -1,13 +1,13 @@
 .tasks-list {
   display: grid;
   grid-template-columns: 1fr;
-  width: calc(100% - 30px);
+  width: 100%;
   margin: 20px auto 0;
   row-gap: 20px;
 
   @media (min-width: 765px) {
     grid-template-columns: 1fr 1fr;
-    column-gap: 10px;
+    column-gap: 5px;
   }
 
   @media (min-width: 1024px) {
