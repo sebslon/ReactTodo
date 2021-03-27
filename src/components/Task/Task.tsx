@@ -1,11 +1,12 @@
-import { useHistory, useParams } from 'react-router';
 import { useEffect, useState } from 'react';
-import { useDatabase } from '../../hooks/useDatabase';
+import { useHistory, useParams } from 'react-router';
 import { useDispatch } from 'react-redux';
 
+import { useDatabase } from '../../hooks/useDatabase';
+
 import { default as bemCssModules } from 'bem-css-modules';
-import IconButton from '../IconButton/IconButton';
 import { default as TaskStyles } from './Task.module.scss';
+import IconButton from '../IconButton/IconButton';
 
 import deleteTaskIcon from '../../images/clear-24px.svg';
 import doneTaskIcon from '../../images/done-24px.svg';
@@ -14,6 +15,7 @@ import { DoneTask } from '../../types/doneTasks.types';
 import { TodoTask } from '../../types/todoTasks.types';
 import { addDoneTask, removeDoneTask } from '../../actions/doneActions';
 import { removeTodoTask } from '../../actions/todoActions';
+
 import { getTimeInformation, getLeftTime} from '../../helpers/timeFunctions'
 
 const style = bemCssModules(TaskStyles);

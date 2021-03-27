@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { DatabaseManager } from "../helpers/DatabaseManager";
 import { StoreContext } from "../stores/StoreProvider";
+import { DatabaseManager } from "../helpers/DatabaseManager";
 
 export function useDatabase(): DatabaseManager {
   const databaseManager = useContext(StoreContext);

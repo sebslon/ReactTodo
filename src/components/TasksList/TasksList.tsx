@@ -1,11 +1,13 @@
-import { default as bemCssModules } from 'bem-css-modules';
-import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
+import { useSelector } from 'react-redux';
+
+import { default as bemCssModules } from 'bem-css-modules';
+import { default as TasksListStyles } from './TasksList.module.scss';
+
+import Task from '../Task/Task';
 import { DoneTask } from '../../types/doneTasks.types';
 import { TodoTask } from '../../types/todoTasks.types';
 import { RootState } from '../../reducers/rootReducer';
-import Task from '../Task/Task';
-import { default as TasksListStyles } from './TasksList.module.scss';
 
 const style = bemCssModules(TasksListStyles);
 

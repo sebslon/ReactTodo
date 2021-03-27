@@ -1,6 +1,7 @@
-import { Switch, Route, Redirect } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Switch, Route, Redirect } from 'react-router-dom';
+
 import { useDatabase } from '../../hooks/useDatabase';
 
 import AddTask from '../AddTask/AddTask';
